@@ -2,7 +2,7 @@
 <head></head>
 <body>
 <?php
-  echo "Hola Mundo, que tal son las 12:13";
+  echo "Actualizacion desde entorno de desarrollo";
 ?>
 </body>
 </html>
