@@ -26,34 +26,25 @@ Una Pc de desarrollo:
 Objetivo
 -------------
 
-El objetivo de este documento es la configuración del flujo de trabajo por lo que se omitira la instalacion de las aplicaciones usadas.
+El objetivo de este documento es la configuración del entorno de trabajo por lo que se omitira la instalacion de las aplicaciones usadas.
 
-Flujo de trabajo
--------------
 
 Configuración del servidor web
 -------------
 
-
 1.- Accedemos a la ruta en donde va a estar alojado nuestro proyecto en produccion en nuestro ejemplo var/www/html. Es importante mencionar que todo esto se debe hacer con un tipo de usuario normal, en caso de que no se puedan realizar modificaiones habra que otorgarle la autorizacion necesaria.
-
-
-```sh
-cd var/www/html 
-```
-
 
 2.- Inicializamos un nuevo repositorio
 
-```sh
-git init
+```
+$ git init
 ```
 
 3.- En caso de no haber configurado nuestros datos en git, tendremos que hacerlo
 
-```sh
-git config user.name Nombre_Del_Usuario
-git config user.email Correo_electronico
+```
+$ git config user.name Nombre_Del_Usuario
+$ git config user.email Correo_electronico
 ```
 
 4.- Creamos un archivo php para usarlo de prueba en nuestro ejemplo lo llamamos index.php.
@@ -83,11 +74,11 @@ El Webhook es un desencadenador que se ejecuta en la ocurrencia de un evento, no
 6.- Una vez creado un repositorio en github (No agreguen el archivo README.md), se procede a cargar estos archivos.
 
 ```
-git add -A
-git commit -m "Carga de archivos en repositorio github"
-git remote add origin LA_URL_DEL REPOSITORIO
-git push origin master
-git push --set-upstream origin master
+$ git add -A
+$ git commit -m "Carga de archivos en repositorio github"
+$ git remote add origin LA_URL_DEL REPOSITORIO
+$ git push origin master
+$ git push --set-upstream origin master
 ```
 
 
@@ -104,15 +95,15 @@ Configuración de la(s) Pc(s) de desarrollo
 
 Clonamos el repositorio remoto en la ubicacion deseada. Para esto seguimos los pasos 2 y 3 de la instalacion del servidor y continuamos con lo siguiente.
 ```
-git clone URL_DEL_REPOSITORIO_REMOTO
+$ git clone URL_DEL_REPOSITORIO_REMOTO
 ```
 
 Una vez realizado cambios en el proyecto.
 ```
-git add -A
-git commit -m "Actualizacion del proyecto"
-git remote add origin URL_DEL_REPOSITORIO_REMOTO
-git push origin master
+$ git add -A
+$ git commit -m "Actualizacion del proyecto"
+$ git remote add origin URL_DEL_REPOSITORIO_REMOTO
+$ git push origin master
 ```
 
 En este momento el cambio automaticamente debe verse reflejado en el servidor de produccion, con las ventajas sobre los servidores ftp de llevar un control de versiones en donde pueden trabajar varios desarrolladores.
