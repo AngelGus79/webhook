@@ -1,4 +1,4 @@
-Despliegue automatizado usando webhook
+Despliegue automatizado usando webhooks
 ===================
 
 En este documento se describe una manera automatica de realizar despliegues, usando git y webhooks de github. 
@@ -43,8 +43,8 @@ $ git init
 3.- En caso de no haber configurado nuestros datos en git, tendremos que hacerlo
 
 ```
-$ git config user.name Nombre_Del_Usuario
-$ git config user.email Correo_electronico
+$ git config user.name *nombre del usuario*
+$ git config user.email *correo electrónico*
 ```
 
 4.- Creamos un archivo php para usarlo de prueba en nuestro ejemplo lo llamamos index.php.
@@ -69,7 +69,7 @@ $ git config user.email Correo_electronico
 ?>
 ```
 
-El Webhook es un desencadenador que se ejecuta en la ocurrencia de un evento, nosotros configuramos cual evento y que cuando este evento suceda haga un HTTP POST a nuestro servidor. En nuestro ejemplo nuestro webhook lo vamos a configurar cada que hacen un push al repositorio en github, este desencadenador enviara un HTTP POST a nuestro servidor el cual hara que se ejecute el archivo github.php y este no es mas que un pull y el estado final de la ejecucion del pull.
+El Webhook es una URL que se habilita en la ocurrencia de un evento mediante un HTTP POST, nosotros configuramos esta URL y en cuál evento se debe habilitar. En nuestro ejemplo nuestro webhook lo vamos a configurar cada que hagan un `git push` al repositorio en github y posteriormente de manera automatica se enviara el Webhook mediante un HTTP POST a nuestro servidor el cual hara que se ejecute el archivo github.php. Este no es mas que un `git pull` y el estado final de la ejecucion del `git pull`.
 
 6.- Una vez creado un repositorio en github (No agreguen el archivo README.md), se procede a cargar estos archivos.
 
