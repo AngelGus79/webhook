@@ -1,7 +1,7 @@
 Despliegue automatizado usando webhooks
 ===================
 
-En este documento se describe una manera automatica de realizar despliegues, usando git y webhooks de github. 
+En este documento se describe una manera automatica de realizar despliegues, usando git y los webhooks de github. 
 
 Pre - requisitos
 -------------
@@ -26,7 +26,7 @@ Una Pc de desarrollo:
 Objetivo
 -------------
 
-El objetivo de este documento es la configuración del entorno de trabajo por lo que se omitira la instalacion de las aplicaciones usadas.
+El objetivo de este documento es la configuración del entorno de trabajo por lo que se omitira la instalación de las aplicaciones usadas.
 
 
 Configuración del servidor web
@@ -43,8 +43,8 @@ $ git init
 3.- En caso de no haber configurado nuestros datos en git, tendremos que hacerlo
 
 ```
-$ git config user.name *nombre del usuario*
-$ git config user.email *correo electrónico*
+$ git config user.name nombre_del_usuario
+$ git config user.email correo_electrónico
 ```
 
 4.- Creamos un archivo php para usarlo de prueba en nuestro ejemplo lo llamamos index.php.
@@ -76,7 +76,7 @@ El Webhook es una URL que se habilita en la ocurrencia de un evento mediante un 
 ```
 $ git add -A
 $ git commit -m "Carga de archivos en repositorio github"
-$ git remote add origin LA_URL_DEL REPOSITORIO
+$ git remote add origin la_url_del_repositorio
 $ git push origin master
 $ git push --set-upstream origin master
 ```
@@ -88,21 +88,21 @@ Configuración del webhook
 1.- Accedemos al repositorio de github y hacemos click en la opcion settings > webhooks 
 y hacemos click en en boton < add webhook >
 
-2.- En el campo Payload URL, debemos escribir la url de nuestro servidor apuntando a la pagina github.php ejemplo: http://miUrl/github.php, en el campo Content type, debemos seleccionar la opcion application/x-www-form-urlencoded, nos pregunta tambien sobre el evento en donde nos gustaria desencanedar el webook, debemos seleccionar just the push event, dejamos activado el webhook y finalmente hacemos click en el boton < add webhook >.
+2.- En el campo Payload URL, debemos escribir la url de nuestro servidor apuntando a la pagina github.php ejemplo: http://miUrl/github.php, en el campo Content type, debemos seleccionar la opcion application/x-www-form-urlencoded, nos pregunta tambien sobre el evento en donde nos gustaria desencanedar el webook, debemos seleccionar "just the push event", dejamos activado el webhook y finalmente hacemos click en el boton < add webhook >.
 
 Configuración de la(s) Pc(s) de desarrollo
 -------------
 
 Clonamos el repositorio remoto en la ubicacion deseada. Para esto seguimos los pasos 2 y 3 de la instalacion del servidor y continuamos con lo siguiente.
 ```
-$ git clone URL_DEL_REPOSITORIO_REMOTO
+$ git clone la_url_del_repositorio
 ```
 
 Una vez realizado cambios en el proyecto.
 ```
 $ git add -A
 $ git commit -m "Actualizacion del proyecto"
-$ git remote add origin URL_DEL_REPOSITORIO_REMOTO
+$ git remote add origin la_url_del_repositorio
 $ git push origin master
 ```
 
